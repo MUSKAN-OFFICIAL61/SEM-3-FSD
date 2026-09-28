@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Campus Help Desk</title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<div class="app">
+
+
+    <!-- SIDEBAR -->
+
+    <aside class="sidebar">
+
+        <div class="logo">
+
+            <div class="logo-icon">
+                ?
+            </div>
+
+            <div>
+
+                <h2>Campus</h2>
+
+                <span>HELP DESK</span>
+
+            </div>
+
+        </div>
+
+
+        <div class="side-content">
+
+            <p class="small-title">
+                STUDENT SUPPORT
+            </p>
+
+
+            <div class="side-item active">
+
+                <span>▣</span>
+
+                My Requests
+
+            </div>
+
+
+            <div class="side-item">
+
+                <span>◉</span>
+
+                Campus Issues
+
+            </div>
+
+
+            <div class="side-item">
+
+                <span>?</span>
+
+                Need Help?
+
+            </div>
+
+        </div>
+
+
+        <div class="sidebar-bottom">
+
+            <div class="status-dot"></div>
+
+            System Online
+
+        </div>
+
+    </aside>
+
+
+
+    <!-- MAIN -->
+
+    <main class="main">
+
+
+        <!-- HEADER -->
+
+        <header class="header">
+
+            <div>
+
+                <p class="welcome">
+                    STUDENT PORTAL
+                </p>
+
+                <h1>
+                    Campus Help Desk
+                </h1>
+
+                <p class="subtitle">
+                    Report a problem. Track a request.
+                    Get campus support.
+                </p>
+
+            </div>
+
+
+            <div class="header-badge">
+
+                <span class="green-dot"></span>
+
+                Support Active
+
+            </div>
+
+        </header>
+
+
+
+        <!-- STATS -->
+
+        <section class="stats">
+
+            <div class="stat-card">
+
+                <div class="stat-icon purple">
+                    #
+                </div>
+
+                <div>
+
+                    <span>Total Requests</span>
+
+                    <strong id="totalRequests">
+                        0
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon orange">
+                    !
+                </div>
+
+                <div>
+
+                    <span>High Priority</span>
+
+                    <strong id="highRequests">
+                        0
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon green">
+                    ✓
+                </div>
+
+                <div>
+
+                    <span>System Status</span>
+
+                    <strong>Online</strong>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- FORM -->
+
+        <section class="form-section">
+
+
+            <div class="section-heading">
+
+                <div>
+
+                    <span class="section-label">
+                        NEW REQUEST
+                    </span>
+
+                    <h2>
+                        Tell us what's wrong
+                    </h2>
+
+                </div>
+
+
+                <div class="ticket-symbol">
+                    +
+                </div>
+
+            </div>
+
+
+
+            <form id="requestForm">
+
+
+                <div class="form-grid">
+
+
+                    <div class="input-group">
+
+                        <label>
+                            Student Name
+                        </label>
+
+                        <input
+                            type="text"
+                            id="studentName"
+                            placeholder="Enter your name"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="input-group">
+
+                        <label>
+                            Email
+                        </label>
+
+                        <input
+                            type="email"
+                            id="email"
+                            placeholder="student@example.com"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="input-group">
+
+                        <label>
+                            Category
+                        </label>
+
+                        <select
+                            id="category"
+                            required
+                        >
+
+                            <option value="">
+                                Select category
+                            </option>
+
+                            <option value="Technical">
+                                Technical
+                            </option>
+
+                            <option value="Hostel">
+                                Hostel
+                            </option>
+
+                            <option value="Library">
+                                Library
+                            </option>
+
+                            <option value="Transport">
+                                Transport
+                            </option>
+
+                            <option value="Academic">
+                                Academic
+                            </option>
+
+                            <option value="Other">
+                                Other
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="input-group">
+
+                        <label>
+                            Priority
+                        </label>
+
+                        <select
+                            id="priority"
+                            required
+                        >
+
+                            <option value="">
+                                Select priority
+                            </option>
+
+                            <option value="Low">
+                                Low
+                            </option>
+
+                            <option value="Medium">
+                                Medium
+                            </option>
+
+                            <option value="High">
+                                High
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                </div>
+
+
+
+                <div class="input-group">
+
+                    <label>
+                        Problem Description
+                    </label>
+
+                    <textarea
+                        id="description"
+                        rows="4"
+                        placeholder="Describe your problem..."
+                        required
+                    ></textarea>
+
+                </div>
+
+
+
+                <button
+                    type="submit"
+                    class="submit-btn"
+                >
+
+                    <span>Submit Request</span>
+
+                    <span>→</span>
+
+                </button>
+
+
+            </form>
+
+        </section>
+
+
+
+        <!-- REQUESTS -->
+
+        <section class="requests-section">
+
+
+            <div class="requests-header">
+
+                <div>
+
+                    <span class="section-label">
+                        REQUEST HISTORY
+                    </span>
+
+                    <h2>
+                        Recent Requests
+                    </h2>
+
+                </div>
+
+
+                <span
+                    id="requestCount"
+                    class="count-badge"
+                >
+                    0 requests
+                </span>
+
+            </div>
+
+
+
+            <div
+                id="requestsContainer"
+                class="requests-container"
+            >
+
+                <div class="empty-state">
+
+                    <div class="empty-icon">
+                        ✓
+                    </div>
+
+                    <h3>
+                        No requests yet
+                    </h3>
+
+                    <p>
+                        Your submitted requests will
+                        appear here.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+        </section>
+
+
+    </main>
+
+</div>
+
+
+
+<!-- EDIT MODAL -->
+
+<div
+    id="editModal"
+    class="modal hidden"
+>
+
+    <div class="modal-box">
+
+        <div class="modal-header">
+
+            <div>
+
+                <span class="section-label">
+                    EDIT REQUEST
+                </span>
+
+                <h2>
+                    Update your request
+                </h2>
+
+            </div>
+
+            <button
+                id="closeModal"
+                class="close-btn"
+            >
+                ×
+            </button>
+
+        </div>
+
+
+        <form id="editForm">
+
+            <input
+                type="hidden"
+                id="editId"
+            >
+
+
+            <div class="input-group">
+
+                <label>
+                    Student Name
+                </label>
+
+                <input
+                    type="text"
+                    id="editStudentName"
+                    required
+                >
+
+            </div>
+
+
+            <div class="input-group">
+
+                <label>
+                    Email
+                </label>
+
+                <input
+                    type="email"
+                    id="editEmail"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-grid">
+
+                <div class="input-group">
+
+                    <label>
+                        Category
+                    </label>
+
+                    <select
+                        id="editCategory"
+                        required
+                    >
+
+                        <option value="Technical">
+                            Technical
+                        </option>
+
+                        <option value="Hostel">
+                            Hostel
+                        </option>
+
+                        <option value="Library">
+                            Library
+                        </option>
+
+                        <option value="Transport">
+                            Transport
+                        </option>
+
+                        <option value="Academic">
+                            Academic
+                        </option>
+
+                        <option value="Other">
+                            Other
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="input-group">
+
+                    <label>
+                        Priority
+                    </label>
+
+                    <select
+                        id="editPriority"
+                        required
+                    >
+
+                        <option value="Low">
+                            Low
+                        </option>
+
+                        <option value="Medium">
+                            Medium
+                        </option>
+
+                        <option value="High">
+                            High
+                        </option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+
+            <div class="input-group">
+
+                <label>
+                    Problem Description
+                </label>
+
+                <textarea
+                    id="editDescription"
+                    rows="4"
+                    required
+                ></textarea>
+
+            </div>
+
+
+            <button
+                type="submit"
+                class="submit-btn"
+            >
+
+                Update Request →
+
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
